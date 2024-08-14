@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Windows 11</title>
+  <link rel="icon" type="image/x-icon" href="./assets/win.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: content-box;
+    }
+    .bg{
+      background: url(./assets/bg.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100vw;
+      height: 100vh;
+    }
+    .iconspara{
+      text-shadow: -2px 0px 13px rgba(0,0,0,1);
+    }
+    .context-menu {
+            position: absolute;
+            text-align: start;
+            background: rgb(24,24,27);
+            border-radius: 10px;
+        }
+
+        .context-menu ul {
+            padding: 5px;
+            margin: 0px;
+            min-width: 180px;
+            list-style: none;
+        }
+
+        .context-menu ul li {
+            padding-left: 15px;
+            padding-right: 12px;
+            padding-bottom: 2px;
+            padding-top: 2px;
+        }
+
+        .context-menu ul li a {
+            text-decoration: none;
+            font-size: 12px;
+            color: white;
+            text-shadow: -2px 0px 13px rgba(0,0,0,1);
+        }
+
+        .context-menu ul li:hover {
+            background: rgb(59, 57, 57);
+            border-radius: 4px;
+        }
+
+        #startmenu{
+          width: 100%;
+          position: absolute;
+          bottom: -650px;
+          transition: all 0.2s ease;
+        }
+        #bottom-time{
+
+          position: absolute;
+          bottom: 60px;
+          /* right: 10px; */
+          right: -330px;
+          transition: all 0.2s ease;
+        }
+        
+        #widgets{
+          position: absolute;
+          bottom: 60px;
+          /* left: 10px; */
+          left: -620px;
+          transition: all 0.2s ease;
+        }  
+        #setting{
+          position: absolute;
+          bottom: -650px;
+          right: 8px;
+          transition: all 0.2s ease;
+        }
+        #uppericons{
+          position: absolute;
+          bottom: -100px;
+          right: 115px;
+          transition: all 0.2s ease;
+        }
+        .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgb(24,24,27);
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 6px;
+  
+  position: absolute;
+  z-index: 1;
+  bottom: 60px;
+  left: 50%;
+  margin-left: -24px;
+  transition: opacity 0.2s ease-in, visibility 0.2s ease-in;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1; /* Make the tooltip visible and opaque on hover */
+}
+    #imgbtn img {
+      transition: transform 0.2s ease; /* Smooth icon transition */
+    }
+    #imgbtn.active img {
+      transform: rotate(180deg); /* Rotate the icon when active */
+    }
+  </style>
+</head>
+<body class="overflow-hidden">
+  <div class="bg">
+    <div id="startmenu" class="flex items-center justify-center">
+      <img class="w-[550px] h-[610px]" src="./assets/start.png" >
+    </div>
+    <div id="bottom-time" class="flex items-end justify-end">
+      <img class="w-[330px] h-[440px]" src="./assets/time.png" >
+    </div>
+    <div id="widgets" class="flex items-start justify-start">
+      <img class="w-[600px] h-[660px]" src="./assets/widget.png" >
+    </div>
+    <div id="setting" class="flex items-start justify-start">
+      <img class="w-[400px] h-[440px]" src="./assets/wifi.png" >
+    </div>
+    <div id="uppericons" class="flex items-start justify-start">
+      <div class="flex p-1 rounded-lg bg-zinc-800">
+        <div class="tooltip transition-all p-3 rounded-lg hover:bg-zinc-700">
+          <img class="w-[20px] h-[20px]" src="./assets/genshin.png">
+          <span class="tooltiptext px-2 py-2">Genshin Impact</span>
+        </div>
+        <div class="tooltip transition-all p-3 rounded-lg hover:bg-zinc-700">
+          <img class="w-[20px] h-[20px]" src="./assets/rocket.png">
+          <span class="tooltiptext px-2 py-2">Rocket League</span>
+        </div>
+        <div class="tooltip transition-all p-3 rounded-lg hover:bg-zinc-700">
+          <img class="w-[20px] h-[20px]" src="./assets/spotify.svg">
+          <span class="tooltiptext px-2 py-2">Spotify</span>
+        </div>
+      </div>
+    </div>
+    <div class="top-bar w-full h-full">
+      <div class="icons w-16 p-2">
+        <div class="thispc transition-all hover:bg-white/20 active:bg-white/50 text-center ml-1 mb-3">
+          <img src="./assets/recyclebinfull.ico" class="h-[60px] w-[60px]">
+          <p class="iconspara text-[12px] text-white mt-1">Recycle Bin</p>
+        </div>
+        <div class="thispc text-center  transition-all hover:bg-white/20 active:bg-white/50 ml-1 mb-3">
+          <img src="./assets/thispc.png" class="h-[60px] w-[60px]">
+          <p class="iconspara text-[12px]  text-white mt-1">This PC</p>
+        </div>
+
+        <div class="thispc text-center  transition-all hover:bg-white/20 active:bg-white/50 ml-1 mb-3">
+          <a href="https://www.rocketleague.com/" target="_blank">
+          <img src="./assets/rocket.png" class="h-[60px] w-[60px]">
+          <p class="iconspara text-[12px]  text-white mt-1">Rocket League</p>
+        </a>
+        </div>
+        <div class="thispc text-center  transition-all hover:bg-white/20 active:bg-white/50 ml-1 mb-3">
+          <a href="https://genshin.hoyoverse.com/" target="_blank">
+          <img src="./assets/genshin.png" class="h-[60px] w-[60px]">
+          <p class="iconspara text-[12px]  text-white mt-1">Genshin Impact</p>
+        </a>
+        </div>
+        <div class="thispc text-center  transition-all hover:bg-white/20 active:bg-white/50 ml-1 mb-3">
+          <a href="https://www.youtube.com/watch?v=h9uFQv3t1AU">
+          <img src="./assets/folder.png" class="h-[60px] w-[60px]">
+          <p class="iconspara text-[12px]  text-white mt-1">DO NOT CLICK THIS!</p>
+        </a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="contextMenu" class="context-menu" style="display:none">
+      <ul>
+          <li><a class="flex items-center justify-between" href="#">
+            <p>View</p>
+            <p>></p>
+          </a></li>
+          <li><a class="flex items-center justify-between" href="#">
+            <p>Sort by</p>
+            <p>></p>
+          </a></li>
+          <li><a href="#">Refresh</a></li>
+          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-600">
+          <li ><a href="#">Paste</a></li>
+          <li><a href="#">Open in Terminal</a></li>
+          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-600">
+          <li><a href="#">New</a></li>
+          <li><a href="#">Personalize</a></li>
+      </ul>
+  </div>
+
+    <div class="bottom-bar py-[6px] flex items-center justify-between bg-zinc-900 absolute w-full h-10 bottom-0">
+      <div id="widgetbtn" class="flex ml-3 transition-all rounded-lg hover:bg-zinc-800 p-1 gap-x-2">
+        <img src="./assets/weather.svg">
+        <div>
+          <p class="text-white text-[12px]">20 °C</p>
+          <p class="text-white text-[12px]">Pretty Sunny</p>
+        </div>
+      </div>
+      <div class="flex ml-24 gap-x-1">
+        <div class="tooltip">
+          <img id="startmenubtn" class="w-[25px] h-[30px] transition-all rounded-lg hover:bg-zinc-800 brightness-125 p-2" src="./assets/win.svg">
+          <span class="tooltiptext px-2 py-2">Start</span>
+        </div>
+        <div class="tooltip">
+          <img id="startmenubtn" class="w-[30px] h-[30px] transition-all rounded-lg hover:bg-zinc-800 p-2" src="./assets/spotify.svg">
+          <span class="tooltiptext px-2 py-2">Spotify</span>
+        </div>
+        <div class="tooltip">
+          <img id="startmenubtn" class="w-[30px] h-[30px] transition-all rounded-lg hover:bg-zinc-800 p-2" src="./assets/chrome.svg">
+          <span class="tooltiptext px-2 py-2">Chrome</span>
+        </div>
+        <div class="tooltip">
+          <img id="startmenubtn" class="w-[30px] h-[30px] transition-all rounded-lg hover:bg-zinc-800 p-2" src="./assets/vs.svg">
+          <span class="tooltiptext px-3 w-[100px] py-2">Visual Studio Code</span>
+        </div>
+        <div class="tooltip">
+          <img id="startmenubtn" class="w-[35px] h-[30px] transition-all rounded-lg hover:bg-zinc-800 p-2" src="./assets/stremio.svg">
+          <span class="tooltiptext px-2 py-2">Stremio</span>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <div id="imgbtn" class="flex transition rounded-lg hover:bg-zinc-800 py-1">
+          <img  src="./assets/upper.svg">
+        </div>
+        <div id="settingbtn" class="flex transition rounded-lg hover:bg-zinc-800 p-1">
+          <img src="./assets/settings.svg">
+        </div>
+        <div id="datetime" class="flex mr-3 transition-all rounded-lg hover:bg-zinc-800 p-1 flex-col text-end">
+          <p id="time" class="text-white text-[12px]"></p>
+          <p id="date" class="text-white text-[12px]"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.onclick = hideMenu;
+        document.oncontextmenu = rightClick;
+
+        function hideMenu() {
+            document.getElementById(
+                "contextMenu").style.display = "none"
+        }
+
+        function rightClick(e) {
+            e.preventDefault();
+
+            if (document.getElementById(
+                "contextMenu").style.display == "block")
+                hideMenu();
+            else {
+                let menu = document
+                    .getElementById("contextMenu")
+
+                menu.style.display = 'block';
+                menu.style.left = e.pageX + "px";
+                menu.style.top = e.pageY + "px";
+            }
+        }
+
+    function updateDateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const dateString = now.toLocaleDateString([], { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+    document.getElementById('time').textContent = timeString;
+    document.getElementById('date').textContent = dateString;
+  }
+
+  updateDateTime();
+  setInterval(updateDateTime, 60000);
+  const win = document.querySelector("#startmenubtn");
+  const bottom = document.querySelector("#datetime");
+  const widget = document.querySelector("#widgetbtn")
+  const setting = document.querySelector("#settingbtn")
+  const upperbtn = document.getElementById("imgbtn")
+
+  const uppermenu = document.getElementById("uppericons")
+  const startmenu = document.getElementById("startmenu");
+  const bottomtime = document.getElementById("bottom-time");
+  const widgetmenu = document.getElementById("widgets");
+  const settingmenu = document.getElementById("setting");
+  
+win.addEventListener("click", function() {
+    if (startmenu.style.bottom == "60px") {
+      startmenu.style.bottom = "-650px";
+    } else {
+        startmenu.style.bottom = "60px";
+    }
+});
+bottom.addEventListener("click", function() {
+    if (bottomtime.style.right == "10px") {
+      bottomtime.style.right = "-330px";
+    } else {
+        bottomtime.style.right = "10px";
+    }
+});
+widget.addEventListener("click", function() {
+    if (widgetmenu.style.left == "10px") {
+      widgetmenu.style.left = "-620px";
+    } else {
+        widgetmenu.style.left = "10px";
+    }
+});
+setting.addEventListener("click", function() {
+  if (settingmenu.style.bottom == "60px") {
+      settingmenu.style.bottom = "-650px";
+    } else {
+        settingmenu.style.bottom = "60px";
+    }
+});
+
+upperbtn.addEventListener("click",function(){
+  if (uppermenu.style.bottom == "60px") {
+      uppermenu.style.bottom = "-10px";
+    } else {
+        uppermenu.style.bottom = "60px";
+    }
+  
+  upperbtn.classList.toggle('active')
+})
+  </script>
+</body>
+</html>
